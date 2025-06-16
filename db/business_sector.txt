@@ -1,0 +1,5 @@
+CREATE TABLE public.business_sector (
+    id SERIAL PRIMARY KEY,
+    sector_id VARCHAR(255) NOT NULL UNIQUE,
+    sector_name VARCHAR(255) NOT NULL
+);

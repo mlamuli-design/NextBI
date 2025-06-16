@@ -1,0 +1,211 @@
+/* Home.css */
+
+.container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, white, white);
+}
+
+.form-container {
+    display: flex;
+    width: 95%;
+    height: 95%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #a3c5e2;
+    padding: 0px 40px 40px 40px;
+    border-radius: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.form-section {
+    flex: 1;
+    padding: 40px;
+    
+}
+
+.left {
+    background: white;
+    color: #333;
+}
+
+.right {
+    background: #a3c5e2;
+    color: white;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 36px;
+}
+
+input{
+    border: 10px solid #ccc;
+    
+}
+
+.two-inputs {
+    
+    display: flex;
+    gap: 10px;
+}
+
+input, select{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: vertical; /* Allows vertical resizing */
+    min-height: 100px; /* Adjust this as needed */
+}
+
+
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.terms a {
+    color: #ffeb3b;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 10px;
+    background: white;
+    color: #3b38ff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.register-btn:hover {
+    background: #ffeb3b;
+    color: black;
+}
+
+
+.next-btn, .prev-btn, .register-btn {
+    width: 100%;
+    padding: 12px;
+    /* margin-top: 10px; */
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.next-btn {
+    background: #3b38ff;
+    color: white;
+}
+
+.next-btn:hover {
+    background: #2a28cc;
+}
+
+.prev-btn {
+    background: #ccc;
+    color: black;
+    margin-top: 10px;
+
+}
+
+.prev-btn:hover {
+    background: #aaa;
+}
+
+.register-btn {
+    background: #ffeb3b;
+    color: black;
+}
+
+.register-btn:hover {
+    background: #ffc107;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.terms a {
+    color: #3b38ff;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    /* border: none; */
+    border-radius: 8px;
+    font-size: 16px;
+    /* font-weight: bold; */
+    color: #333; /* Text color */
+    /* background: #a3c5e2; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    /* appearance: none; Removes default dropdown arrow */
+    outline: none;
+}
+
+select:focus {
+    border: none;
+    outline: none;
+    box-shadow: 0 0 5px rgba(109, 191, 250, 0.5);
+}
+
+select option {
+    font-size: 16px;
+    padding: 12px;
+    background:  rgba(109, 191, 250, 0.5);
+    color: black; /* Ensures all options have black text */
+}
+
+select:hover {
+    background: #f8f9fa; /* Slight hover effect */
+}
+
+
+/* Active Selected Option */
+select option:checked {
+    background-color: #a3c5e2;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .form-container {
+        flex-direction: column;
+        width: 90%;
+    }
+}

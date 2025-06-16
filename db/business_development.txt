@@ -1,0 +1,5 @@
+CREATE TABLE public.business_development (
+    id SERIAL PRIMARY KEY,
+    dev_id VARCHAR(255) NOT NULL,
+    dev_type VARCHAR(255) NOT NULL
+);

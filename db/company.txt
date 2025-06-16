@@ -1,0 +1,17 @@
+CREATE TABLE public.company (
+    id SERIAL PRIMARY KEY,
+    startup_name VARCHAR(255) NOT NULL,
+    product_service_description TEXT,
+    team_size VARCHAR(255) NOT NULL,
+    founder_count VARCHAR(255) NOT NULL,
+    male_count VARCHAR(255) NOT NULL,
+    female_count VARCHAR(255) NOT NULL,
+    youth_count VARCHAR(255) NOT NULL,
+    adult_count VARCHAR(255) NOT NULL,
+    officer_id VARCHAR(255),
+    sector_id VARCHAR(255),
+    dev_type VARCHAR(255),
+    company_id VARCHAR(255),
+    generated_revenue VARCHAR(255),
+    status VARCHAR(255)
+);

@@ -1,0 +1,11 @@
+CREATE TABLE public.incubation (
+    id SERIAL PRIMARY KEY,
+    incubation_id VARCHAR(255) UNIQUE,
+    year_of_incubation VARCHAR(255) NOT NULL,
+    membership_stage VARCHAR(255) NOT NULL,
+    start_day_of_agreement DATE NOT NULL,
+    end_day_of_agreement DATE NOT NULL,
+    duration_of_agreement VARCHAR(255),
+    company_id VARCHAR(255) NOT NULL,
+    officer_id VARCHAR(255) NOT NULL
+);

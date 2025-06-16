@@ -1,0 +1,585 @@
+/* SideNavStyle.css */
+
+body {
+    background:transparent;
+    margin: 0;
+    font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #fff;
+    padding-left: 200px;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+}
+
+.helper {
+    background: rgba(0, 0, 0, 0.2);
+    color: #ffea92;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    padding: 1.2em 2em;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.helper span {
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 0.4em;
+    display: block;
+}
+
+.menu {
+    background: #5bc995;
+    height: 100vh;
+    width: 240px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    outline: none;
+}
+
+.avatar {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 2em 0.5em;
+    text-align: center;
+}
+
+.avatar img {
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #ffea92;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+    margin-left: 60px;
+    transition: transform 0.3s ease;
+}
+
+.avatar img:hover {
+    transform: scale(1.05);
+}
+
+.avatar h2 {
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0.5em 0;
+    margin: 0;
+}
+
+li {
+    padding: 0.5em 1em 0.5em 3em;
+    font-size: 0.95em;
+    font-weight: regular;
+    background-repeat: no-repeat;
+    background-position: left 15px center;
+    background-size: auto 20px;
+    transition: all 0.15s linear;
+    cursor: pointer;
+}
+
+.icon-dashboard {
+    background-image: url(http://www.entypo.com/images/gauge.svg);
+}
+
+.icon-customers {
+    background-image: url(http://www.entypo.com/images/briefcase.svg);
+}
+
+.icon-users {
+    background-image: url(http://www.entypo.com/images/users.svg);
+}
+
+.icon-settings {
+    background-image: url(http://www.entypo.com/images/tools.svg);
+}
+
+li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+li:focus {
+    outline: none;
+}
+
+/* Dropdown styles */
+.dropdown {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.1);
+    /* Light background for dropdown */
+    border-radius: 4px;
+    margin-top: 0.5em;
+    display: none;
+    /* Hide dropdown by default */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    /* Smooth transition */
+    top: 100%;
+    /* Position dropdown below the parent item */
+    left: 0;
+    width: 100%;
+    /* Full width of the parent */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Add shadow for depth */
+    opacity: 0;
+    /* Hide dropdown by default */
+    visibility: hidden;
+    /* Hide dropdown by default */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    /* Smooth transition */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+/* Show dropdown on hover */
+.icon-dashboard:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    max-height: 200px;
+}
+
+.dropdown li {
+    padding: 0.8em 1em;
+    /* Adjust padding for better spacing */
+    font-size: 0.9em;
+    background: rgba(15, 72, 143, 0.1);
+    /* Light background for dropdown items */
+    cursor: pointer;
+    transition: background 0.3s ease;
+    /* Smooth hover transition */
+}
+
+.dropdown li:hover {
+    background: rgba(255, 255, 255, 0.2);
+    /* Lighter background on hover */
+}
+
+/* Add a small arrow to indicate dropdown */
+.icon-dashboard {
+    position: relative;
+}
+
+.icon-dashboard::after {
+    content: '▼';
+    /* Down arrow */
+    font-size: 0.6em;
+    margin-left: 0.5em;
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+    /* Smooth arrow rotation */
+}
+
+/* Rotate arrow when dropdown is visible */
+.icon-dashboard:hover::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+@media screen and (max-width: 900px) and (min-width: 400px) {
+    body {
+        padding-left: 90px;
+    }
+
+    .menu {
+        width: 90px;
+    }
+
+    .avatar {
+        padding: 0.5em;
+        position: relative;
+    }
+
+    .avatar img {
+        width: 60px;
+    }
+
+    .avatar h2 {
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 100px;
+        margin: 0;
+        min-width: 200px;
+        border-radius: 4px;
+        background: rgba(0, 0, 0, 0.4);
+        transform: translate3d(-20px, -50%, 0);
+        transition: all 0.15s ease-in-out;
+    }
+
+    .avatar:hover h2 {
+        opacity: 1;
+        transform: translate3d(0px, -50%, 0);
+    }
+
+    li {
+        height: 60px;
+        background-position: center center;
+        background-size: 30px auto;
+        position: relative;
+    }
+
+    li span {
+        opacity: 0;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 0.2em 0.5em;
+        border-radius: 4px;
+        top: 50%;
+        left: 80px;
+        transform: translate3d(-15px, -50%, 0);
+        transition: all 0.15s ease-in-out;
+    }
+
+    li span::before {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 50%;
+        left: -5px;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-right: 5px solid rgba(0, 0, 0, 0.5);
+        transform: translateY(-50%);
+    }
+
+    li:hover span {
+        opacity: 1;
+        transform: translate3d(0px, -50%, 0);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    body {
+        padding-left: 0;
+    }
+
+    .menu {
+        width: 230px;
+        box-shadow: 0 0 0 100em rgba(0, 0, 0, 0);
+        transform: translate3d(-230px, 0, 0);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .smartphone-menu-trigger {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        left: 100%;
+        background: #5bc995;
+    }
+
+    .smartphone-menu-trigger::before,
+    .smartphone-menu-trigger::after {
+        content: '';
+        width: 50%;
+        height: 2px;
+        background: #fff;
+        border-radius: 10px;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+
+    .smartphone-menu-trigger::after {
+        top: 55%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+
+    ul li {
+        padding: 1em 1em 1em 3em;
+        font-size: 1.2em;
+    }
+
+    .menu:focus {
+        transform: translate3d(0, 0, 0);
+        box-shadow: 0 0 0 100em rgba(0, 0, 0, 0.6);
+    }
+
+    .menu:focus .smartphone-menu-trigger {
+        pointer-events: none;
+    }
+
+    /* Image Slider Container */
+    .image-slider {
+        position: relative;
+        width: 100%;
+        /* Make it take full width */
+        height: 250px;
+        /* Fixed height for the image container */
+        overflow: hidden;
+        /* Hide the overflowing part of the image */
+    }
+
+    /* Image Style */
+    .slide-image-wrapper {
+        display: flex;
+        /* Arrange images in a row */
+        animation: slide 15s linear infinite;
+        /* Set animation for sliding */
+    }
+
+    .slide-image {
+        width: 100%;
+        /* Each image should take full width */
+        height: 250px;
+        /* Set the height of images */
+        object-fit: cover;
+        /* Ensure image covers the area without stretching */
+    }
+
+    /* Keyframe Animation for Sliding */
+    @keyframes slide {
+        0% {
+            transform: translateX(100%);
+            /* Start from the right */
+        }
+
+        50% {
+            transform: translateX(0);
+            /* Move to the center */
+        }
+
+        100% {
+            transform: translateX(-100%);
+            /* End on the left side */
+        }
+    }
+}
+
+.sidebar-container {
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 280px;
+    background: linear-gradient(180deg, #e3f2fd 0%, #bbdefb 100%);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.sidebar-header {
+    text-align: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid #ffea92;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+.company-name {
+    text-decoration: none;
+    color: #1976d2;
+}
+
+.company-name h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.user-info {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+
+.user-label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.user-name {
+    color: #1976d2;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+.sidebar-menu {
+    flex: 1;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: #333;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.7);
+    color: #1976d2;
+}
+
+.menu-icon {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.flag-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.flag-container:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.flag-image {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    transition: all 0.3s ease;
+}
+
+.flag-container:hover .flag-image {
+    transform: scale(1.05);
+}
+
+.flag-credits {
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.7rem;
+    color: rgba(0, 0, 0, 0.6);
+    font-style: italic;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.flag-container:hover .flag-credits {
+    opacity: 1;
+}
+
+.logout-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem;
+    background: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+    background: #1565c0;
+}
+
+.logout-icon {
+    margin-right: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar-container {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar {
+        padding: 1rem;
+    }
+
+    .logo {
+        width: 80px;
+    }
+}
+
+.admin-section {
+    position: relative;
+    width: 100%;
+}
+
+.admin-dropdown {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    margin-top: 4px;
+    padding: 8px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 8px 16px 8px 48px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: #e9ecef;
+    color: #007bff;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: #e9ecef;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
